@@ -1,20 +1,19 @@
-import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import {useState, useEffect} from "react";
+import {NavLink} from "react-router-dom";
 
 function Header(props) {
     return (
         <div className="header-wrapper">
             <header className="header-container">
-                <div className="logo-container">
-                    <h1>
-                        <NavLink to={"/"}>놀당 갑서</NavLink>
-                    </h1>
-                </div>
+                <a href="/" className="logoa"><img className="logoimg" src={"/images/noldang.png"}/></a>
                 <nav className="nav-container">
                     <ul>
-                        <li>
+                        {/*<li>
                             <NavLink to={"/"}>Home</NavLink>
                         </li>
+                        <li>
+                            <NavLink to={"/jeju/food_list"}>맛집</NavLink>
+                        </li>*/}
                         <li>
                             <NavLink to={"/jeju/food_find"}>맛집 검색</NavLink>
                         </li>

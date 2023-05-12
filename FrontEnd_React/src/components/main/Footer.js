@@ -44,7 +44,7 @@ function Footer() {
     let food=recipeList.map((food)=>
         <li>
             <a href={food.url} target={"_blank"}>
-                <img src={food.poster}/>
+                <img src={food.poster} style={{width: "92px", height: "92px"}}/>
                 <span>{food.title}</span>
             </a>
         </li>

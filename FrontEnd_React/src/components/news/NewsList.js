@@ -51,19 +51,19 @@ function NewsList(){
         </table>
     )
     return (
-        <div className="wrapper row3">
-            <main className="hoc container clear">
-
-                <div className="content">
-
+        <div className="food_Find_wrapper row3">
+            <main className="food_Find_main hoc container clear">
+                <div className="content food_Find_content">
                     <div id="gallery">
                         <figure>
+                            <div className="food_Find_search">
                             <header className="heading inline">
                                 <input type={"text"} size={"30"} className={"input-sm"}
                                        onChange={dataChange} value={title} onKeyDown={dataKeyDown}/>
                                 <input type={"button"} value={"검색"}
                                        className={"btn btn-sm btn-danger"} onClick={findData}/>
                             </header>
+                            </div>
                         </figure>
                         <table className={"table"}>
                             <tbody>

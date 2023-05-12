@@ -9,6 +9,7 @@ import FoodDetail from "./components/food/FoodDetail";
 import FoodFind from "./components/food/FoodFind";
 import NewsList from "./components/news/NewsList";
 import $ from "jquery"
+
 import ChatMain from "./ChatMain";
 
 

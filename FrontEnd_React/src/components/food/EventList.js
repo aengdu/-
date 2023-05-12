@@ -1,5 +1,6 @@
 import {useEffect,useState} from "react";
 import axios from "axios";
+import {NavLink} from "react-router-dom";
 function EventList(){
     const [foodList,setFoodList]=useState([])
     const [curpage,setCurpage]=useState(1)
@@ -64,10 +65,16 @@ function EventList(){
         pages(endPage+1)
     }
     let html=foodList.map((food,index)=>
-        <li className={index%4==0?'one_quarter first':'one_quarter'}>
-            <a href="#">
+        <li
+            className={[
+                "food_Find_list_item",
+                index % 4 === 0 ? "one_quarter first" : "one_quarter",
+            ].join(" ")}
+        >
+            <NavLink to={"/jeju/food_detail/" + food.no}>
                 <img src={food.poster} title={food.title}/>
-            </a>
+                <h6 className="heading">{food.title}</h6>
+            </NavLink>
         </li>
     )
     let row=[];
@@ -91,29 +98,23 @@ function EventList(){
         row.push(<li><a href="#" onClick={()=>pageNext(endPage<totalpage?endPage+1:endPage)}>Next &raquo;</a></li>)
     }
     return (
-        <div className="wrapper row3">
-            <main className="hoc container clear">
-
-                <div className="content">
-
+        <div className="food_Find_wrapper row3">
+            <main className="food_Find_main hoc container clear">
+                <div className="content food_Find_content">
                     <div id="gallery">
                         <figure>
                             <header className="heading">제주 명소</header>
                             <ul className="nospace clear">
                                 {html}
                             </ul>
-
                         </figure>
                     </div>
-
                     <nav className="pagination">
                         <ul>
                             {row}
                         </ul>
                     </nav>
-
                 </div>
-
                 <div className="clear"></div>
             </main>
         </div>

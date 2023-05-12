@@ -31,7 +31,7 @@ File: Layout CSS
 
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
-#pageintro{padding:200px 0 280px;}/* 280px => 80px for #introblocks negative margin */
+
 
 #pageintro article, #pageintro article p{display:block; max-width:75%; margin:0 auto; text-align:center;}
 #pageintro article p{max-width:65%; line-height:2rem;}
@@ -64,7 +64,7 @@ File: Layout CSS
 
 /* Services */
 #services{}
-#services .elements article{border-radius:0;}
+#services .elements article{border-radius:20px;}
 
 /* Shout */
 .shout{}
@@ -160,9 +160,9 @@ File: Layout CSS
 
 /* Footer
 --------------------------------------------------------------------------------------------------------------- */
-#footer{padding:80px 0;}
+#footer{padding:20px 0;}
 
-#footer .heading{margin-bottom:50px; font-size:1.2rem;}
+#footer .heading{margin-bottom:20px; font-size:1.2rem;}
 #footer .logoname{margin-bottom:50px;}
 #footer p + .faico{margin-top:30px;}
 
@@ -314,9 +314,24 @@ hr, .borderedbox{border-color:#D7D7D7;}
 label span{color:#FF0000; background-color:inherit;}
 input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 
-.overlay{color:#FFFFFF; background-color:inherit;}
-.overlay::after{color:inherit; background-color:rgba(40,46,57,.7);/* #282E39 */}
-.overlay.light::after{background-color:rgba(151,169,189,.7);/* #97A9BD */}
+.category {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	flex-wrap: wrap;
+}
+
+.categoryname {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+}
+
+
 
 .gradient{color:#474747; background:linear-gradient(to bottom, #F4F4F4 55%, #FFFFFF 50%, #FFFFFF 100%);}/* Overlap dark to make a hard transition */
 @media screen and (max-width:750px){/* Only the colours height has been changed */
@@ -367,6 +382,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .nav-container ul {
 	display: flex;
 	list-style: none;
+	justify-content: center;
 	margin: 0;
 	padding: 0;
 }
@@ -577,4 +593,350 @@ table a, #comments a{background-color:inherit;}
 
 	.font-x2{font-size:1.6rem;}
 	.font-x3{font-size:1.8rem;}
+}
+
+.centered-slide-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 1rem; /* Adjust as needed */
+}
+
+.search-input {
+	padding: 0.5rem 1rem;
+	border: 1px solid #cccccc;
+	border-radius: 4px; /* Round the left corners */
+	outline: none;
+}
+
+.search-button {
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 4px; /* Round the right corners */
+	background-color: #ffa200; /* The default Bootstrap blue color */
+	color: white;
+	cursor: pointer;
+	margin: 2px;
+}
+
+.search-button:hover {
+	background-color: #0056b3; /* A dark blue color on hover */
+}
+
+/* Footer Component CSS */
+.bgded.overlay.row4 {
+	background-color: #f5f5f5;
+}
+
+#footer {
+	display: flex;
+	justify-content: space-between;
+}
+
+#footer .one_third {
+	flex-basis: 32%;
+}
+
+#footer h6 {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+ul.nospace.linklist {
+	list-style: none;
+	padding: 0;
+}
+
+ul.nospace.linklist li {
+	margin-bottom: 10px;
+}
+
+ul.nospace.linklist li a {
+	color: #333;
+	text-decoration: none;
+}
+
+ul.nospace.linklist li a:hover {
+	color: #666;
+	text-decoration: underline;
+}
+
+ul.nospace.clear.latestimg {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style: none;
+	padding: 0;
+}
+
+ul.nospace.clear.latestimg li {
+	flex-basis: 30%;
+	margin-bottom: 10px;
+}
+
+ul.nospace.clear.latestimg li a {
+	display: block;
+	text-decoration: none;
+}
+
+ul.nospace.clear.latestimg li img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+ul.nospace.clear.latestimg li span {
+	display: block;
+	color: #333;
+	font-size: 12px;
+}
+
+.wrapper.row5 {
+	background-color: #333;
+	padding: 30px 0;
+}
+
+#copyright {
+	display: flex;
+	justify-content: space-between;
+	color: #fff;
+}
+
+#copyright a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#copyright a:hover {
+	text-decoration: underline;
+}
+.css-n2z61w {
+	width: 304px;
+	min-height: 320px;
+	height: 40vh;
+	border-radius: 5px;
+	object-fit: cover;
+}
+
+.css-cy5urb {
+	position: relative;
+	bottom: 9rem;
+	left: 20px;
+}
+.css-10b5t22 {
+	position: relative;
+	font-size: 2.7rem;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	right: 34%;
+	bottom: 210px;
+}
+.css-hbwec1 {
+	position: relative;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	width: 100px;
+	height: 40px;
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+	background-image: none;
+	border-radius: 5px;
+	border: 2px solid rgb(15, 117, 134);
+	transition: all 0.2s ease 0s;
+	cursor: pointer;
+}
+.css-1a1av27 {
+	font-size: 1rem;
+	font-weight: 400;
+	-webkit-box-align: center;
+	align-items: center;
+	color: black;
+}
+.home-image-container {
+	display: flex;
+	justify-content: center; /* 가로 방향 가운데 정렬 */
+	align-items: center; /* 세로 방향 가운데 정렬 */
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scroll-snap-type: x mandatory;
+}
+
+.centered-slide-content {
+	flex: 0 0 auto;
+	margin-right: 20px;
+	scroll-snap-align: start;
+	text-align: center; /* 이미지를 가운데 정렬 */
+}
+.css-15axuv3 {
+	width: 100%;
+	height: 100%;
+	margin-top: 20px;
+}
+.food_Find_wrapper {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+.food_Find_main {
+	padding: 2rem;
+	background: #F7F7F7;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+	border-radius: 8px;
+}
+
+.food_Find_gallery {
+	margin-bottom: 2rem;
+}
+
+.food_Find_list {
+	margin-top: 10px;
+}
+
+.food_Find_list_item {
+	background: #fff;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+	border-radius: 8px;
+	overflow: hidden;
+	transition: all 0.3s;
+	margin-bottom: 20px;
+}
+
+.food_Find_list_item img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	transition: all 0.3s;
+}
+
+.food_Find_list_item h6 {
+	padding: 1rem;
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #333;
+	transition: all 0.3s;
+}
+
+.food_Find_buttons {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+.food_Find_search {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.food_Find_search input[type="text"] {
+	padding: 0.5rem;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	width: 200px;
+	height: 32px;
+}
+
+.food_Find_search input[type="button"] {
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	border: none;
+	background-color: #f44336;
+	color: #fff;
+	cursor: pointer;
+	margin-left: 1rem;
+	transition: all 0.3s;
+}
+
+.food_Find_search input[type="button"]:hover {
+	background-color: #d32f2f;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.pagination button {
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	border: none;
+	background-color: #3f51b5;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.3s;
+	margin: 0px 5px;
+}
+
+.pagination button:hover {
+	background-color: #303f9f;
+}
+.header-wrapper {
+	width: 100%;
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+.logo-container {
+	font-size: 1.5rem;
+}
+
+.logo-container a {
+	color: #333;
+	text-decoration: none;
+
+}
+
+.nav-container {
+	display: flex;
+	justify-content: center;
+	width: 90%;
+}
+
+.nav-container ul {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-container ul li {
+	text-align: center;
+	flex-grow: 1;
+}
+
+.nav-container ul li a {
+	color: #333;
+	text-decoration: none;
+	font-size: 16px;
+}
+
+.nav-container ul li a:hover {
+	color: #999;
+}
+.logoimg {
+	max-width: 30%;
 }
