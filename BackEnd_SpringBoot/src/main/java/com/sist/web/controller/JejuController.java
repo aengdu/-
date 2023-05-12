@@ -3,9 +3,13 @@ package com.sist.web.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.sist.web.dao.*;
 import com.sist.web.entity.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
 import java.util.*;
 
 import javax.servlet.http.Cookie;
@@ -39,14 +43,14 @@ public class JejuController {
 		List<JejuFoodEntity> list = fDao.jejuFoodTop9();
 		return list;
 	}
-	@GetMapping("jeju/food_list_react")
+	/*@GetMapping("jeju/food_list_react")
 	public List<JejuFoodEntity> jeju_food_list(String page){
 		int curpage = Integer.parseInt(page);
 		int rowSize = 20;
 		int start=(rowSize*curpage)-rowSize;
 		List<JejuFoodEntity> list = fDao.jejuFoodListData(start);
 		return list;
-	}
+	}*/
 	
 	@GetMapping("jeju/food_page_react")
 	public JejuPageVO jejuPageData(String page) {
@@ -188,6 +192,19 @@ public class JejuController {
 		
 		return list;
 	}
+
+	@GetMapping("jeju/food_list")
+	public List<JejuFoodEntity> jeju_food_list(String addr, String page){
+		HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getResponse();
+		response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+		System.out.println(addr);
+		int curpage = Integer.parseInt(page);
+		int rowSize = 20;
+		int start=(rowSize*curpage)-rowSize;
+		List<JejuFoodEntity> list = fDao.jejuFoodListData(addr, start);
+		return list;
+	}
+
 	//쿠키//////////////////////////
 	@GetMapping("jeju/jeju_cookie_react")
 	public List<JejuFoodEntity> jeju_cookie(HttpServletRequest request){
