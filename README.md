@@ -1,4 +1,4 @@
-
+![noldang](https://github.com/aengdu/noldang/assets/68989001/6876c5dc-5204-4e67-889b-40f586041627)
 📆 프로젝트 기간
 -----
 2023.04 - 2023.05
