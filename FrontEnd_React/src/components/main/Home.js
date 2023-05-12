@@ -167,8 +167,10 @@ function Home() {
                 </div>
             </div>*/}
             <div className="bgded overlay light">
-                <h2 className="css-qnb52w">🛫 제주도 🔥HOT🔥 TOP 6 여행지</h2>
+
+
                 <section id="services" className="hoc container clear">
+                    <h2 className="css-qnb52w">🛫 제주도 🔥HOT🔥 TOP 6 여행지</h2>
                     <ul className="nospace group elements elements-three">{html}</ul>
                 </section>
             </div>
