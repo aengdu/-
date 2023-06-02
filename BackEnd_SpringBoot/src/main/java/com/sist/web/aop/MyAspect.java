@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.condition.RequestConditionHolder;
 
 @Aspect
 @Component
-@CrossOrigin("http://localhost:3000")
 public class MyAspect {
 	@After("execution(* com.sist.web.controller.*Controller.*(..))")
 	public void after() throws Exception {

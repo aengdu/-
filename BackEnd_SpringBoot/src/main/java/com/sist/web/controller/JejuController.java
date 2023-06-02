@@ -16,7 +16,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 @RestController
-@CrossOrigin("http://localhost:3000")
 public class JejuController {
 	@Autowired
 	private JejuFoodDAO fDao;

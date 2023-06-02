@@ -14,7 +14,6 @@ import com.sist.web.entity.RecipeEntity;
 import com.sist.web.entity.RecipePageVO;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
 public class RecipeController {
     @Autowired
     private RecipeDAO dao;

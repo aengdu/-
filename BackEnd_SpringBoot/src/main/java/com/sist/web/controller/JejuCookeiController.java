@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-@CrossOrigin("http://localhost:3000")
 public class JejuCookeiController {
 	@GetMapping("jeju/food_detail_before")
 	public String food_detail_before(int no, HttpServletResponse response) {

@@ -1,6 +1,7 @@
 package com.sist.web.security;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.tomcat.util.file.ConfigurationSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.AccessDeniedException;
@@ -17,12 +18,16 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+
+
 
 @Configuration
 @RequiredArgsConstructor
@@ -40,20 +45,16 @@ public class SecurityConfig {
                 .csrf().disable()
                 // CORS 설정
                 .cors(c -> {
-                            CorsConfigurationSource source = request -> {
-                                // Cors 허용 패턴
-                                CorsConfiguration config = new CorsConfiguration();
-                                config.setAllowedOrigins(
-                                        List.of("*")
-                                );
-                                config.setAllowedMethods(
-                                        List.of("*")
-                                );
-                                return config;
-                            };
-                            c.configurationSource(source);
-                        }
-                )
+                    CorsConfigurationSource source = request -> {
+                        CorsConfiguration config = new CorsConfiguration();
+                        config.addAllowedOrigin("http://localhost:3000");
+                        config.addAllowedHeader("*");
+                        config.addAllowedMethod("*");
+                        config.setAllowCredentials(true);
+                        return config;
+                    };
+                    c.configurationSource(source);
+                })
                 // Spring Security 세션 정책 : 세션을 생성 및 사용하지 않음
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
@@ -89,6 +90,18 @@ public class SecurityConfig {
                 });
 
         return http.build();
+    }
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+
+        configuration.addAllowedOrigin("http://localhost:3000");
+        configuration.addAllowedHeader("*");
+        configuration.addAllowedMethod("*");
+        configuration.setAllowCredentials(true);
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 
     @Bean
